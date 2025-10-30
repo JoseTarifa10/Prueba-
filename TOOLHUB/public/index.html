@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login / Register</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="auth-forms" class="auth-container">
+      <div class="container">
+        <h2>Registro</h2>
+        <div class="form-group">
+          <input
+            type="text"
+            id="username"
+            placeholder="Nombre de usuario"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="email"
+            id="email"
+            placeholder="Correo electrónico"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            id="password"
+            placeholder="Contraseña"
+            required
+          />
+        </div>
+        <button onclick="registerUser()">Registrar</button>
+        <div class="error" id="register-error"></div>
+      </div>
+
+      <div class="container">
+        <h2>Iniciar Sesión</h2>
+        <div class="form-group">
+          <input
+            type="email"
+            id="login-email"
+            placeholder="Correo electrónico"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            id="login-password"
+            placeholder="Contraseña"
+            required
+          />
+        </div>
+        <button onclick="loginUser()">Iniciar sesión</button>
+        <div class="error" id="login-error"></div>
+      </div>
+    </div>
+
+    <div id="main-page" style="display: none">
+      <header>
+        <h1 id="welcome-message">Panel de Herramientas</h1>
+        <button id="logout-btn">Cerrar Sesión</button>
+      </header>
+      <main>
+        <div class="tools-container">
+          <div class="tool-card" onclick="loadTool('calculator')">
+            <div class="tool-icon">🧮</div>
+            <h3>Calculadora</h3>
+            <p>Herramienta matemática básica</p>
+          </div>
+
+          <div class="tool-card" onclick="loadTool('clock')">
+            <div class="tool-icon">⏰</div>
+            <h3>Reloj</h3>
+            <p>Hora actual y temporizador</p>
+          </div>
+
+          <div class="tool-card" onclick="loadTool('notes')">
+            <div class="tool-icon">📝</div>
+            <h3>Notas</h3>
+            <p>Tus notas personales</p>
+          </div>
+
+          <div class="tool-card" onclick="loadTool('converter')">
+            <div class="tool-icon">📊</div>
+            <h3>Conversor</h3>
+            <p>Conversión de unidades</p>
+          </div>
+
+          <div class="tool-card" onclick="loadTool('dice')">
+            <div class="tool-icon">🎲</div>
+            <h3>Dados</h3>
+            <p>Generador de dados aleatorios</p>
+          </div>
+
+          <div class="tool-card" onclick="loadTool('password')">
+            <div class="tool-icon">🔒</div>
+            <h3>Contraseñas</h3>
+            <p>Generador de Contraseñas seguras</p>
+          </div>
+
+          <div class="tool-card" onclick="loadTool('weather')">
+            <div class="tool-icon">☀️</div>
+            <h3>Tiempo</h3>
+            <p>Clima actual en tu ubicación</p>
+          </div>
+
+          <div class="tool-card" onclick="loadTool('qr')">
+            <div class="tool-icon">🔳</div>
+            <h3>QR</h3>
+            <p>Generador de QR</p>
+          </div>
+
+          <div class="tool-card" onclick="loadTool('hangman-game')">
+            <div class="tool-icon">🎮</div>
+            <h3>Juego</h3>
+            <p>El ahorcado</p>
+          </div>
+
+          <div class="tool-card" onclick="loadTool('task-manager')">
+            <div class="tool-icon">✅</div>
+            <h3>Tareas</h3>
+            <p>Generador de tareas</p>
+          </div>
+        </div>
+
+        <div class="stats-card" onclick="loadTool('stats')">
+          <h3 class="stats-title">📊 Estadísticas</h3>
+          <p class="stats-description">
+            Explora estadísticas detalladas con gráficos interactivos.
+          </p>
+        </div>
+
+        <div id="tool-content" class="tool-content">
+          <div class="welcome-message">
+            <h2>Selecciona una herramienta</h2>
+            <p>Elige una de las herramientas disponibles en el menú superior</p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="tools.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
+  </body>
+</html>
