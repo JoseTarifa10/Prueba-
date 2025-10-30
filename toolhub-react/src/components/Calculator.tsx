@@ -22,7 +22,7 @@ const Calculator = () => {
 
       if (isNaN(operand)) break;
 
-      switch (operator) {
+      switch (operator) { 
         case '+':
           result += operand;
           break;
