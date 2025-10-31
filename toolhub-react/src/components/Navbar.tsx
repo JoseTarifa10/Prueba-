@@ -19,6 +19,11 @@ function Navbar() {
               Calculadora
             </Link>
           </li>
+          <li>
+            <Link to="/weather" className="navbar-link">
+              Clima
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

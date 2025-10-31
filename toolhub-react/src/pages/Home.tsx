@@ -20,6 +20,14 @@ function Home() {
       path: '/calculator',
       color: '#61dafb'
     },
+    {
+      id: 'weather',
+      name: 'Clima',
+      description: 'Consulta el clima en tiempo real de cualquier ciudad',
+      icon: '🌤️',
+      path: '/weather',
+      color: '#667eea'
+    },
     // Herramientas futuras se añadirán aquí
     {
       id: 'converter',
