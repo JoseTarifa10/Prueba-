@@ -1,76 +1,123 @@
 .home-container {
-  padding: 2rem;
-  max-width: 1200px;
+  flex: 1;
+  padding: 3rem 2rem;
+  max-width: 1400px;
   margin: 0 auto;
-  min-height: calc(100vh - 100px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .home-header {
   text-align: center;
-  margin-bottom: 3rem;
-  padding: 2rem 0;
+  margin-bottom: 4rem;
+  padding: 1rem 0;
+  width: 100%;
 }
 
 .home-header h1 {
-  color: #282c34;
-  font-size: 2.5rem;
+  color: #2c3e50;
+  font-size: 3rem;
   margin-bottom: 1rem;
   font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .subtitle {
-  color: #666;
-  font-size: 1.2rem;
-  font-weight: 300;
+  color: #555;
+  font-size: 1.3rem;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 1rem 0;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+@media (min-width: 1200px) {
+  .tools-grid {
+    max-width: 1200px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
 .tool-card {
   background: white;
   border: 3px solid #e0e0e0;
-  border-radius: 12px;
-  padding: 2rem;
+  border-radius: 16px;
+  padding: 2.5rem;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  min-height: 280px;
+}
+
+.tool-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .tool-card:not(.disabled):hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.tool-card:not(.disabled):hover::before {
+  opacity: 1;
 }
 
 .tool-card.disabled {
-  opacity: 0.6;
+  opacity: 0.65;
   cursor: not-allowed;
+  background: #f9f9f9;
 }
 
 .tool-icon {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 1.5rem;
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .tool-card:not(.disabled):hover .tool-icon {
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .tool-name {
@@ -111,19 +158,22 @@
 
 @media (max-width: 768px) {
   .home-container {
-    padding: 1rem;
+    padding: 2rem 1rem;
+  }
+
+  .home-header {
+    margin-bottom: 2.5rem;
   }
 
   .home-header h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .subtitle {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
-  .tools-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .tool-card {
+    max-width: 100%;
   }
 }
