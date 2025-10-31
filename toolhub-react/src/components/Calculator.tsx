@@ -107,21 +107,25 @@ const Calculator = () => {
       <div className="buttons">
         <button onClick={handleClear} className="btn clear">C</button>
         <button onClick={() => handleOperator('/')} className="btn operator">÷</button>
+        <button onClick={() => handleOperator('*')} className="btn operator">×</button>
+        <button onClick={() => handleOperator('-')} className="btn operator">−</button>
+        
         <button onClick={() => handleNumber('7')} className="btn">7</button>
         <button onClick={() => handleNumber('8')} className="btn">8</button>
         <button onClick={() => handleNumber('9')} className="btn">9</button>
-        <button onClick={() => handleOperator('*')} className="btn operator">×</button>
+        <button onClick={() => handleOperator('+')} className="btn operator plus">+</button>
+        
         <button onClick={() => handleNumber('4')} className="btn">4</button>
         <button onClick={() => handleNumber('5')} className="btn">5</button>
         <button onClick={() => handleNumber('6')} className="btn">6</button>
-        <button onClick={() => handleOperator('-')} className="btn operator">−</button>
+        <button onClick={handleEquals} className="btn operator equals">=</button>
+        
         <button onClick={() => handleNumber('1')} className="btn">1</button>
         <button onClick={() => handleNumber('2')} className="btn">2</button>
         <button onClick={() => handleNumber('3')} className="btn">3</button>
-        <button onClick={() => handleOperator('+')} className="btn operator">+</button>
+        
         <button onClick={() => handleNumber('0')} className="btn zero">0</button>
         <button onClick={() => handleNumber('.')} className="btn">.</button>
-        <button onClick={handleEquals} className="btn operator equals">=</button>
       </div>
     </div>
   );
